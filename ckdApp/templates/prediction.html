@@ -1,0 +1,104 @@
+{% extends "index.html" %}
+{% block content %}
+
+<style>
+    label{
+        font-size: 1.2em;
+    }
+</style>
+
+<div class="container my-5">
+    <div class="card center" style="width: 70vw;">
+        <div class="card-body">
+            <div class="row"  style="margin-bottom: 10px;">
+                <div class="col-md-1"></div>
+                <div class="col-md-10">
+                    <center class="my-4"><h1>Chronic Kidney Disease Predictor</h1></center>
+                    <div class="card card-body" style="border: 1px solid black;background-color:  rgb(29, 213, 234);">
+                        <form class="form-horizontal" action="/prediction" method="POST">
+                           <div class="row my-4">
+
+                                <div class="col-md-4 my-2">
+                                    <div class="form-group">
+                                        <label for="age" class="form-label">Age</label>
+                                        <input required type="number" min="18" step="any" name="age" class="form-control" id="hb"> 
+                                    </div>
+                                </div>
+                                <div class="col-md-4 my-2">
+                                    <label for="age" class="form-label me-2">Gender</label>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="gen" id="inlineRadio1" value="1">
+                                        <label class="form-check-label" for="inlineRadio1">Male</label>
+                                      </div>
+                                      <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="gen" id="inlineRadio2" value="2">
+                                        <label class="form-check-label" for="inlineRadio2">Female</label>
+                                      </div>
+                                </div>
+                                <div class="col-md-4 my-2">
+                                    <label for="race" class="form-label me-2">Race</label>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="race" id="inlineRadio3" value="1">
+                                        <label class="form-check-label" for="inlineRadio3">Black</label>
+                                      </div>
+                                      <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="race" id="inlineRadio4" value="2">
+                                        <label class="form-check-label" for="inlineRadio4">White</label>
+                                      </div>
+                                </div>
+                        
+                                <div class="col-md-6 my-2">
+                                    <div class="form-group">
+                                        <label for="hb" class="form-label">Hemoglobin (gms)</label>
+                                        <input required type="number" step="any" name="hb" class="form-control" id="hb"> 
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6 my-2">
+                                    <div class="form-group">
+                                        <label for="pcv" class="form-label">Packed Cell Volume (gms)</label>
+                                        <input required type="number" step="any" name="pcv" class="form-control" id="pcv"> 
+                                    </div>
+                                    
+                                </div>
+
+                                <div class="col-md-6 my-2">
+                                    <div class="form-group">
+                                        <label for="sc" class="form-label">Serum Creatinine (mg/dl)</label>
+                                        <input required type="number" step="any" name="sc"  class="form-control" id="sc"> 
+                                    </div>
+                                    
+                                </div>
+
+                                <div class="col-md-6 my-2">
+                                    <div class="form-group">
+                                        <label for="sg" class="form-label">Urine Specific Gravity</label>
+                                        <input required type="number" step="any" name="sg" class="form-control" id="sg"> 
+                                    </div>
+                                    
+                                </div>
+
+                                <div class="col-md-6 my-2">
+                                    <div class="form-group">
+                                        <label for="rbc" class="form-label">Red Blood Cell Count (M/cm)</label>
+                                        <input required type="number" step="any" name="rbcc"  class="form-control" id="rbcc"> 
+                                    </div>
+                                    
+                                </div>
+                              <br>
+
+                            <div class="row mt-3">
+                                <div class="col-md-12 text-center">
+                                    <input type="submit" class="btn btn-danger btn-block"  value="Predict">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

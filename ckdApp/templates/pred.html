@@ -1,0 +1,37 @@
+{% extends "index.html" %}
+{% block content %}
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script&family=Libre+Baskerville&family=PT+Sans+Narrow&family=Roboto+Condensed:ital,wght@1,300&display=swap');
+</style>
+
+<div class="container my-5">
+    <div class="row">
+        <div class="card" style="width: 50vw;background-color:  rgb(29, 213, 234);">
+            <div class="card-body">
+                <h5 class="card-title text-center" style="font-size: 1.5em;font-family: 'Bebas Neue', cursive;">Chronic Kidney Disease Prediction Report</h5>
+                {% if pred == 0 %}
+                    <h5 class="card-title my-5" style="font-size: 1.7em; font-family: 'Bebas Neue', cursive;">Chronic Kidney Disease Detected!</h5>
+                    <h5 class="card-title my-5" style="font-size: 1.7em; font-family: 'Bebas Neue', cursive;">CKD-EPI creatinine equation : GFR is {{forgfr}}</h5>
+                    <h5 class="card-title my-5" style="font-size: 1.7em; font-family: 'Bebas Neue', cursive;">{{stage}}</h5>
+
+                    <p class="card-text text-capitalize my-5" style="font-size: 1.7em; font-family: 'Bebas Neue', cursive;"> 
+                        Please consult the doctor immideately.
+                        Keep Healthy diet.
+                    </p>
+
+                {% endif %}
+
+                {% if pred == 1 %}
+                    <h5 class="card-title my-5" style="font-size: 1.7em;font-family: 'Bebas Neue', cursive;">Chronic Kidney Disease Not Detected!</h5>
+                    <h5 class="card-title my-5" style="font-size: 1.7em; font-family: 'Bebas Neue', cursive;">CKD-EPI creatinine equation : GFR is {{forgfr}}</h5>
+                    <h5 class="card-title my-5" style="font-size: 1.7em; font-family: 'Bebas Neue', cursive;">{{stage}}</h5>
+
+                {% endif %}
+
+                <a href="/about" class="btn btn-danger" style="float: right;">Learn more about CKD</a>
+            </div>
+            </div>
+    </div>
+</div>
+
+{% endblock %}

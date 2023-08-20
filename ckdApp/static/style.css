@@ -1,0 +1,8 @@
+.card {
+    margin: 0 auto; /* Added */
+    float: none; /* Added */
+    margin-bottom: 10px; /* Added */
+    border: 2px solid rgb(45, 126, 192);
+    border-radius: 15px;
+}
+
